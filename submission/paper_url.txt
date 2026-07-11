@@ -1,1 +1,2 @@
-PASTE-YOUR-DEPLOYED-PAPER-URL-HERE
+02_your_first_readable_model = https://colab.research.google.com/github/20Aarya05/FlyrankAI_1/blob/main/notebooks/02_your_first_readable_model.ipynb
+01_first_look_and_discovery = https://colab.research.google.com/github/20Aarya05/FlyrankAI_1/blob/main/notebooks/01_first_look_and_discovery.ipynb
