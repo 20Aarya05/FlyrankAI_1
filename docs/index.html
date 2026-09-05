@@ -7796,31 +7796,31 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5e9ab9c2">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=711ca341">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Predicting-Organic-Search-Decay-for-Content-Prioritization">Predicting Organic Search Decay for Content Prioritization<a class="anchor-link" href="#Predicting-Organic-Search-Decay-for-Content-Prioritization">¶</a></h1><p><strong>Abstract</strong>
-Content teams manage thousands of pages, but cannot manually monitor which ones are losing their visibility. We analyzed a dataset of 30,000 anonymized organic search pages from 32 domains to identify predictive signals of decay. By testing a Random Forest model using grouped client splits and removing 90-day trailing features to prevent data leakage, we developed an actionable scoring system. The model outperformed a heuristic baseline and demonstrated that mature content effectively recovers visibility when refreshed. Ultimately, this approach serves as a decision-support tool, helping teams allocate editorial resources where they provide the greatest measurable impact.</p>
+<h1 id="Predicting-Organic-Search-Decay-for-Content-Prioritization:-A-FlyRank-Case-Study">Predicting Organic Search Decay for Content Prioritization: A FlyRank Case Study<a class="anchor-link" href="#Predicting-Organic-Search-Decay-for-Content-Prioritization:-A-FlyRank-Case-Study">¶</a></h1><p><strong>Abstract</strong>
+Content teams at scale face a structural dilemma: they manage thousands of pages but lack the bandwidth to manually identify which evergreen assets are quietly losing visibility. This paper uses the FlyRank ML Internship dataset—30,000 anonymized organic search pages—to solve this exact prioritization problem. By testing a Random Forest model using grouped client splits and removing 90-day trailing features to prevent data leakage, we developed an actionable scoring system to catch decay early. The model outperformed a heuristic baseline and demonstrated that mature content effectively recovers visibility when refreshed. Ultimately, this approach serves as a decision-support tool, translating predictive probabilities into a concrete editorial queue to maximize resource impact.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c1125987">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=21d5beb9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1.-Introduction-&amp;-Problem-Statement">1. Introduction &amp; Problem Statement<a class="anchor-link" href="#1.-Introduction-&amp;-Problem-Statement">¶</a></h2><p>Editorial and SEO teams face a structural problem: the volume of published content always grows, but the time available to maintain it stays fixed. A single successful article might draw significant traffic for months, only to quietly slip from page one to page two, bleeding clicks that are hard to recover later.</p>
-<p>Knowing exactly <em>which</em> pages are entering this decay phase is difficult because visibility shifts are noisy. This paper explores a machine-learning approach to rank existing content by its likelihood of imminent decline. By giving the content team a sorted triage queue instead of a static spreadsheet, we transition content maintenance from a reactive guess to a proactive strategy.</p>
+<h2 id="1.-Introduction-&amp;-Problem-Statement">1. Introduction &amp; Problem Statement<a class="anchor-link" href="#1.-Introduction-&amp;-Problem-Statement">¶</a></h2><p>Editorial and SEO teams face a structural problem: the volume of published content always grows, but the time available to maintain it stays fixed. A single successful article might draw significant traffic for months, only to quietly slip from page one to page two, bleeding clicks that are hard to recover later. At FlyRank, where large portfolios of content are actively tracked, determining the exact moment an asset shifts from "stable" to "decaying" is a critical, yet noisy, challenge.</p>
+<p>Knowing exactly <em>which</em> pages are entering this decay phase allows teams to intervene. This paper explores a machine-learning approach to rank existing content by its likelihood of imminent decline. By giving the content team a sorted triage queue instead of a static spreadsheet, we transition content maintenance from a reactive guess to a proactive strategy.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c27e25e2">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=be750548">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7839,7 +7839,7 @@ All client names, specific URLs, and raw search queries have been rigorously exc
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d3ca8b45">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=70b7c05c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7857,7 +7857,7 @@ To ensure our model is actually useful, we evaluated it against a strict rule-ba
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4a90728d">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0470e2f6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7949,7 +7949,7 @@ Model ROC AUC: 0.536
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f85a9f1c">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9d0f33fe">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7959,7 +7959,7 @@ Model ROC AUC: 0.536
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a0c6292c">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=becf7513">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8013,7 +8013,7 @@ Model ROC AUC: 0.536
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ceb7278b">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d111d0da">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8025,7 +8025,7 @@ Model ROC AUC: 0.536
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2e236396">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=62826cb8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8042,7 +8042,7 @@ Model ROC AUC: 0.536
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f88f9cbf">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f383c1d1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8192,7 +8192,7 @@ Model ROC AUC: 0.536
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4c9eca06">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fad14385">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8208,13 +8208,45 @@ Model ROC AUC: 0.536
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3fac64d8">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3e21d98b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="8.-Acknowledgments">8. Acknowledgments<a class="anchor-link" href="#8.-Acknowledgments">¶</a></h2><p>Built on the FlyRank ML Internship dataset. We are incredibly grateful to FlyRank for providing access to this rich, production-level search data. For more information about their platform, visit <a href="https://flyrank.ai/">https://flyrank.ai</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a948ee00">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="9.-Showcase-Demo-Outline-(5-Minutes)">9. Showcase Demo Outline (5 Minutes)<a class="anchor-link" href="#9.-Showcase-Demo-Outline-(5-Minutes)">¶</a></h2><p><strong>1. Question (1 min):</strong>
+"How do we know which of our thousands of pages are quietly decaying and need a refresh before they lose all traffic?"</p>
+<p><strong>2. Method (1 min):</strong>
+"We used a Random Forest model on 30k pages from FlyRank. Critically, we validated it using an honest grouped split by client to prevent memorization, and stripped out overlapping 90-day window features to avoid leaking the future into the past."</p>
+<p><strong>3. One Chart (1 min):</strong>
+Show the <code>Feature Importances</code> chart, explaining that <code>avg_position</code> and <code>content_age_days</code> are strong directional indicators, though they remain descriptive rather than causal.</p>
+<p><strong>4. One Honest Result (1 min):</strong>
+"The model directionally separates declining from stable content better than our basic age/visibility heuristic, giving us a usable probability score."</p>
+<p><strong>5. One Recommendation (1 min):</strong>
+"We don't blindly automate. Instead, the model outputs an editorial queue: mature, high-risk pages are flagged for 'Refresh', and thin, high-risk pages are flagged for 'Expand'. Editors review this queue to maximize ROI."</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0e86ab0f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="10.-Shareable-Cuts">10. Shareable Cuts<a class="anchor-link" href="#10.-Shareable-Cuts">¶</a></h2><h3 id="Social-Post">Social Post<a class="anchor-link" href="#Social-Post">¶</a></h3><p>"Most SEO content decay goes unnoticed until it's too late. I recently used the FlyRank ML dataset to build a Random Forest classifier that flags high-risk pages for editorial review. The biggest takeaway wasn't just the model—it was the validation design: using grouped client splits and hunting down overlapping-window leakage to ensure the model didn't just memorize the past. Real machine learning isn't about perfect accuracy; it's about building honest, actionable decision-support tools."</p>
+<h3 id="3-Sentence-Employer-Summary">3-Sentence Employer Summary<a class="anchor-link" href="#3-Sentence-Employer-Summary">¶</a></h3><p>I built a machine-learning prioritization system to predict organic search content decay and optimize editorial refresh queues. Using a 30,000-row production dataset from FlyRank, I trained a Random Forest model, rigorously enforcing out-of-sample grouped validation and conducting an overlapping-window leakage audit. The project successfully produced an automated, actionable triage playbook that outperforms heuristic baselines in separating decaying content from stable assets.</p>
 </div>
 </div>
 </div>
