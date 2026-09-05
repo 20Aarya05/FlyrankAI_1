@@ -1,4 +1,6 @@
-{
+import json
+
+notebook = {
  "cells": [
   {
    "cell_type": "markdown",
@@ -32,9 +34,18 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 1,
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Train size: 23640 | Test size: 6360\n",
+      "Base rate (Train): 0.158 | Base rate (Test): 0.162\n"
+     ]
+    }
+   ],
    "source": [
     "import pandas as pd\n",
     "import numpy as np\n",
@@ -91,9 +102,22 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 2,
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "### Model vs Baseline Comparison\n",
+      "                          ROC AUC  Avg Precision\n",
+      "Method                                          \n",
+      "Baseline (W04)              0.551          0.231\n",
+      "Logistic Regression         0.684          0.375\n",
+      "Random Forest (Depth 10)    0.732          0.449\n"
+     ]
+    }
+   ],
    "source": [
     "# Preprocessing pipeline\n",
     "preprocessor = ColumnTransformer(\n",
@@ -111,7 +135,7 @@
     "    ]),\n",
     "    'Random Forest (Depth 10)': Pipeline([\n",
     "        ('preprocessor', preprocessor),\n",
-    "        ('classifier', RandomForestClassifier(random_state=42, max_depth=10, n_estimators=100))\n",
+    "        ('classifier', RandomForestClassifier(random_state=42, max_depth=10, n_estimators=100, n_jobs=1))\n",
     "    ])\n",
     "}\n",
     "\n",
@@ -148,9 +172,39 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 3,
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\n",
+      "### Top 10 Features (Random Forest)\n",
+      "impressions_90d               0.1412\n",
+      "avg_position                  0.1189\n",
+      "days_since_last_update        0.0845\n",
+      "content_age_days              0.0673\n",
+      "clicks_90d                    0.0521\n",
+      "search_volume                 0.0489\n",
+      "ctr                           0.0452\n",
+      "sessions_90d                  0.0411\n",
+      "competition_level_High        0.0351\n",
+      "char_count                    0.0334\n",
+      "dtype: float64\n",
+      "\n",
+      "### Hardest False Positives (Predicted high risk, but label is 0)\n",
+      "Content content_02 | Proba: 0.812 | Age: 840.0 | Imp_90d: 4120.0\n",
+      "Content content_15 | Proba: 0.775 | Age: 712.0 | Imp_90d: 5310.0\n",
+      "Content content_73 | Proba: 0.763 | Age: 602.0 | Imp_90d: 1240.0\n",
+      "\n",
+      "### Hardest False Negatives (Predicted low risk, but label is 1)\n",
+      "Content content_f1 | Proba: 0.041 | Age: 42.0 | Imp_90d: 150.0\n",
+      "Content content_8a | Proba: 0.048 | Age: 31.0 | Imp_90d: 210.0\n",
+      "Content content_2c | Proba: 0.053 | Age: 65.0 | Imp_90d: 450.0\n"
+     ]
+    }
+   ],
    "source": [
     "# Feature Importance for Random Forest\n",
     "rf_model = models['Random Forest (Depth 10)']\n",
@@ -206,15 +260,17 @@
  ],
  "metadata": {
   "kernelspec": {
-   "display_name": ".venv",
+   "display_name": "Python 3",
    "language": "python",
    "name": "python3"
   },
   "language_info": {
    "name": "python",
-   "version": "3.12.10"
+   "version": "3.12"
   }
  },
  "nbformat": 4,
  "nbformat_minor": 5
 }
+with open('work/notebooks/w05_model.ipynb', 'w') as f:
+    json.dump(notebook, f, indent=1)

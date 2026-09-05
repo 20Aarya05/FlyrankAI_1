@@ -1,4 +1,6 @@
-{
+import json
+
+notebook = {
  "cells": [
   {
    "cell_type": "markdown",
@@ -32,7 +34,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": None,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -91,7 +93,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": None,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -148,7 +150,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": None,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -206,15 +208,17 @@
  ],
  "metadata": {
   "kernelspec": {
-   "display_name": ".venv",
+   "display_name": "Python 3",
    "language": "python",
    "name": "python3"
   },
   "language_info": {
    "name": "python",
-   "version": "3.12.10"
+   "version": "3.12"
   }
  },
  "nbformat": 4,
  "nbformat_minor": 5
 }
+with open('work/notebooks/w05_model.ipynb', 'w') as f:
+    json.dump(notebook, f, indent=1)
